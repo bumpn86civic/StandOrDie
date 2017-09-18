@@ -1,0 +1,26 @@
+#***********************************************************************
+# Stand Or Die
+# This is the extended bashrc file to use as a starting point
+# when configuring the basic bash session.
+# **Note:
+#   Keep this file functional under all forms of UNIX including cygwin
+#************************************************************************
+# \[\e]1;\H:\w\a\]      Sets the xterm icon label.
+# \[\e]2;\u@\H:\w\a\]   Sets the xterm title bar label.
+# \[\e[33m\]\h:\w       Sets the host:$pwd to yellow.
+# \[\e[36;1m\]=>        Sets the promt '=>' to cyan.
+# \[\e[0m\]             Sets the color back to default.
+#
+export SVD_MY_HOSTNAME=$HOSTNAME
+
+#
+# Adds a date timestamp to your history listing.
+#
+HISTTIMEFORMAT="%T "
+
+export PS1="\[\e]1;\H:\w\a\]\[\e]2;\H:\w\a\]\[\e[33m\]$SVD_MY_HOSTNAME:\w \[\e[36;1m\]=> \[\e[0m\]"
+
+alias ls='ls -aCF'
+alias ll='ls -lrt'
+alias du='du -sch'
+alias h='history'
